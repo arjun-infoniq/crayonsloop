@@ -64,7 +64,6 @@ body {
     }
 }
 
-
 .modal {
     position: fixed;
     inset: 0;
@@ -74,6 +73,10 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 999;
+    background-image: url("../images/back.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .modal-box {
@@ -96,16 +99,17 @@ body {
 
 .modal-box input {
     width: 100%;
-    padding: 12px;
+    padding: 18px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
+    box-sizing: border-box;
 }
 
 .modal-box button {
     width: 100%;
-    padding: 14px;
-    border-radius: 12px;
+    padding: 18px;
+    border-radius: 4px;
     border: none;
     background: #528ff0;
     color: white;
