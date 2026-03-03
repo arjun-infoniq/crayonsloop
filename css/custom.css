@@ -32,6 +32,17 @@ body {
   padding: 2px 12px;
 }
 
+.modal-box span {
+  background-color: #ce1515;
+  color: #fff;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px 12px 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
 .header h2 {
   color: #000000;
   font-size: 18px;
@@ -70,17 +81,16 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  background-image: url("../images/back.jpeg");
+  background-image: url("../images/back-2.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .modal-box {
-  background: #1a1a1a;
+  background: rgba(22, 14, 1, 0.74);
   padding: 40px;
-  border-radius: 20px;
-  width: 90%;
+  width: 80%;
   max-width: 400px;
   text-align: center;
 }
@@ -88,6 +98,11 @@ body {
 .modal-box h2 {
   margin-bottom: 20px;
   color: #fff;
+}
+
+.modal-box h3 {
+  font-size: 18px;
+  color: #ff6700;
 }
 
 .modal-box p {
@@ -108,7 +123,7 @@ body {
   padding: 18px;
   border-radius: 4px;
   border: none;
-  background: #528ff0;
+  background: #af4b08;
   color: white;
   font-weight: 600;
   cursor: pointer;
