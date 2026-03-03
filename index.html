@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crayons Loop</title>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+
+     <nav class="header">
+      <div class="mainContainer">
+        <div class="headerFlex">
+          <a href="#"
+            ><img src="images/logo.png" alt="Logo" /> <span>Live</span></a
+          >
+          <h2></h2>
+        </div>
+      </div>
+    </nav>
+
+    <section class="videoWrapper">
+      <!-- <video width="640" height="360" controls>
+        <source src="https://crayons-bridge-prod.s3.amazonaws.com/films/videos/58a6c213-1e0a-4ac9-beaa-8675df6db8e6/Reel_01.mp4?response-content-disposition=inline&AWSAccessKeyId=AKIARCHIKTNNL7ILDAE7&Signature=HKRNEn4D3PaG7jIsmHlA6gcOIJw%3D&Expires=1768383798" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> -->
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/g1p_l-auufo?si=U4ZkogSOtoRfcGYb
+    ?autoplay=1
+    &mute=1
+    &controls=0
+    &fs=0
+    &rel=0
+    &modestbranding=1
+    &iv_load_policy=3
+    &playsinline=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+      ></iframe>
+
+      
+    </section>
+    <!-- <div class="stream-container">
+      <div class="videoWrapper">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/g1p_l-auufo?si=U4ZkogSOtoRfcGYb
+    ?autoplay=1
+    &mute=1
+    &controls=0
+    &fs=0
+    &rel=0
+    &modestbranding=1
+    &iv_load_policy=3
+    &playsinline=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+        ></iframe>
+      </div>
+    </div> -->
+
+    <div class="modal" id="payModal">
+      <div class="modal-box">
+        <h2>Access Live Stream</h2>
+        <p>Pay ₹10 to continue</p>
+        <br />
+        <input
+          type="tel"
+          id="mobile"
+          placeholder="Enter Mobile Number"
+          required
+        />
+        <button onclick="startPayment()">Pay & Watch</button>
+      </div>
+    </div>
+
+    <script>
+      // const DEV_MODE = false;
+
+      // window.onload = function () {
+      //   if (DEV_MODE) {
+      //     document.getElementById("payModal").style.display = "none";
+      //     document.getElementById("liveStream").style.display = "block";
+      //     return;
+      //   }
+      // };
+
+      function startPayment() {
+        const mobile = document.getElementById("mobile").value;
+
+        if (!mobile) {
+          alert("Please enter mobile number");
+          return;
+        }
+
+        var options = {
+          key: "rzp_live_S6rAumTg3wQcmz",
+          amount: 1000, // ₹10 in paise
+          currency: "INR",
+          name: "Live Event",
+          description: "Live Stream Access",
+          handler: function (response) {
+            // Unlock stream
+            document.getElementById("payModal").style.display = "none";
+            document.getElementById("liveStream").style.display = "block";
+          },
+          prefill: {
+            contact: mobile,
+          },
+          theme: {
+            color: "#528ff0",
+          },
+        };
+
+        var rzp = new Razorpay(options);
+        rzp.open();
+      }
+    </script>
+  </body>
+</html>
