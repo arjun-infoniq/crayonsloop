@@ -44,7 +44,7 @@
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/g1p_l-auufo?si=U4ZkogSOtoRfcGYb
+        src="https://www.youtube.com/embed/WSxSCrNEWCQ?si=J_r7ru4GQsnMbwaM
     ?autoplay=1
     &mute=1
     &controls=0
@@ -98,15 +98,15 @@
     </div>
 
     <script>
-      // const DEV_MODE = true;
+      const DEV_MODE = true;
 
-      // window.onload = function () {
-      //   if (DEV_MODE) {
-      //     document.getElementById("payModal").style.display = "none";
-      //     document.getElementById("liveStream").style.display = "block";
-      //     return;
-      //   }
-      // };
+      window.onload = function () {
+        if (DEV_MODE) {
+          document.getElementById("payModal").style.display = "none";
+          document.getElementById("liveStream").style.display = "block";
+          return;
+        }
+      };
 
       function startPayment() {
         const mobile = document.getElementById("mobile").value;
